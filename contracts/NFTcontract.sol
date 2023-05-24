@@ -11,7 +11,7 @@ import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "./interfaces/INFT.sol";
 
-contract NFT is ERC1155, ERC165Storage, Ownable, INFT {
+contract NFTcontract is ERC1155, ERC165Storage, Ownable, INFT {
     using Counters for Counters.Counter;
     Counters.Counter private _tokenId;
 
@@ -23,13 +23,6 @@ contract NFT is ERC1155, ERC165Storage, Ownable, INFT {
     // in the default values, there would be a 5% tax on a 18 decimal asset
     uint256 private rate = 500;
     uint256 private scale = 1e4;
-
-    // inherited from INFT
-    // struct Properties {
-    //     address creator;
-    //     bool isRedeemable;
-    //     string redeemDescrip; // description of what you can redeem with the NFT
-    // }
 
     mapping(uint256 => string) private uris;
     mapping(uint256 => Properties) private properties;
