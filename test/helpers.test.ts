@@ -17,7 +17,7 @@ export const fastForward = async (seconds:any) => {
 };
 
 export const deployNft = async (deployer: SignerWithAddress) => {
-  const NftArtifacts = await ethers.getContractFactory("IndiNFT", deployer);
+  const NftArtifacts = await ethers.getContractFactory("NFTcontract", deployer);
   return await NftArtifacts.deploy("");
 }
 

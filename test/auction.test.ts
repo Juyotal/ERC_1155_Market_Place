@@ -42,7 +42,7 @@ describe("Auction unit tests", function () {
     [owner, artist, bidder1, bidder2, bidder3] = await ethers.getSigners();
 
     // Deploy NFT
-    NFTContract = await ethers.getContractFactory("IndiNFT");
+    NFTContract = await ethers.getContractFactory("NFTcontract");
     NFTInstance = await NFTContract.connect(owner).deploy("");
 
     // Deploy Registry
@@ -50,7 +50,7 @@ describe("Auction unit tests", function () {
     RegistryInstance = await RegistryContract.connect(owner).deploy();
 
     // Deploy Auction
-    AuctionContract = await ethers.getContractFactory("IndiNFTAuction");
+    AuctionContract = await ethers.getContractFactory("NFTAuction");
     AuctionInstance = await AuctionContract.connect(owner).deploy(
       RegistryInstance.address
     );
