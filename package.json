@@ -1,0 +1,50 @@
+{
+  "name": "indi-chain",
+  "version": "0.0.3",
+  "description": "Hardhat environment for the Indi contracts",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@alch/alchemy-web3": "^1.1.7",
+    "@nomiclabs/hardhat-ethers": "^2.0.1",
+    "@nomiclabs/hardhat-waffle": "^2.0.1",
+    "@openzeppelin/contracts": "^4.3.2",
+    "@types/cli-progress": "^3.9.0",
+    "@types/jest": "^26.0.16",
+    "chalk": "^4.1.0",
+    "cli-progress": "^3.9.0",
+    "cross-env": "7.0.3",
+    "dotenv": "^8.2.0",
+    "ethereum-waffle": "^3.2.1",
+    "ethers": "^5.0.23",
+    "hardhat": "^2.0.4",
+    "progress": "^2.0.3",
+    "yargs": "^16.2.0"
+  },
+  "devDependencies": {
+    "@nomiclabs/hardhat-etherscan": "^2.1.7",
+    "@types/chai": "^4.2.22",
+    "@types/cli-progress": "^3.9.0",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "^14.17.26",
+    "@types/progress": "^2.0.3",
+    "chai": "^4.3.4",
+    "hardhat-contract-sizer": "^2.1.1",
+    "hardhat-gas-reporter": "^1.0.4",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.4.4",
+    "prettier-plugin-solidity": "^1.0.0-beta.19"
+  },
+  "scripts": {
+    "chain": "hardhat node",
+    "test": "hardhat test",
+    "test:scen": "hardhat test test/auctionScenario.test.ts",
+    "test:nft": "hardhat test test/IndiNFT.test.ts",
+    "compile": "prettier --write 'contracts/**/*.sol' && hardhat compile",
+    "deploy": "hardhat run scripts/deploy.ts",
+    "accounts": "hardhat accounts",
+    "balance": "hardhat balance",
+    "generate": "hardhat generate",
+    "account": "hardhat account"
+  }
+}
